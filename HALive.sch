@@ -284,8 +284,6 @@ NoConn ~ 5000 3700
 Wire Wire Line
 	6000 3100 6900 3100
 Wire Wire Line
-	6000 3200 6700 3200
-Wire Wire Line
 	5500 4300 6250 4300
 Wire Wire Line
 	5600 4500 6350 4500
@@ -296,7 +294,6 @@ NoConn ~ 5600 2000
 NoConn ~ 6000 2400
 NoConn ~ 6000 2500
 NoConn ~ 6000 2800
-NoConn ~ 6000 3500
 $Comp
 L lorenzo2018:MAX233 U1
 U 1 1 5D24C73E
@@ -452,8 +449,6 @@ Text Label 5600 900  0    50   ~ 0
 RXTTL
 Text Label 6900 3100 0    50   ~ 0
 ANAIN1
-Text Label 6700 3200 0    50   ~ 0
-ANAIN2
 Wire Wire Line
 	5300 4300 5300 4800
 Wire Wire Line
@@ -462,14 +457,8 @@ Wire Wire Line
 	5500 4300 5500 4800
 Wire Wire Line
 	5600 4800 5600 4500
-Wire Wire Line
-	5700 4800 5700 4600
-Wire Wire Line
-	5700 4600 6550 4600
-Text Label 6450 4800 0    50   ~ 0
+Text Label 5750 4700 0    50   ~ 0
 ANAIN1
-Text Label 6550 4600 0    50   ~ 0
-ANAIN2
 Text Label 4600 5900 0    50   ~ 0
 RX232
 Text Label 4600 6000 0    50   ~ 0
@@ -680,23 +669,13 @@ Wire Wire Line
 Wire Wire Line
 	3850 3950 6800 3950
 Wire Wire Line
-	6800 3950 6800 3300
-Wire Wire Line
 	3850 1950 3850 3950
-Wire Wire Line
-	6000 3300 6800 3300
-Wire Wire Line
-	6300 3350 6550 3350
-Wire Wire Line
-	6550 3350 6550 4050
 Wire Wire Line
 	6550 4050 4050 4050
 Wire Wire Line
 	4050 4050 4050 3100
 Wire Wire Line
 	4050 3100 3800 3100
-Wire Wire Line
-	6300 3400 6300 3350
 Wire Wire Line
 	4250 3000 5000 3000
 $Comp
@@ -709,5 +688,63 @@ F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 8100 3200 50 
 F 3 "~" H 8100 3200 50  0001 C CNN
 	1    8100 3200
 	0    1    1    0   
+$EndComp
+$Comp
+L lorenzo2018:BME280 U4
+U 1 1 5D298D7A
+P 9250 1800
+F 0 "U4" H 9578 1896 50  0000 L CNN
+F 1 "BME280" H 9578 1805 50  0000 L CNN
+F 2 "lorenzo2018:BME280" H 9250 1800 50  0001 C CNN
+F 3 "" H 9250 1800 50  0001 C CNN
+	1    9250 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 1450 7850 1600
+Wire Wire Line
+	7850 1600 8850 1600
+Connection ~ 7850 1450
+Wire Wire Line
+	8850 1700 7850 1700
+Wire Wire Line
+	7850 1700 7850 1850
+Connection ~ 7850 1850
+Wire Wire Line
+	6000 3500 6150 3500
+Text Label 6150 3500 0    50   ~ 0
+SCL
+Text Label 6300 3400 0    50   ~ 0
+SDA
+Text Label 8550 1800 0    50   ~ 0
+SCL
+Text Label 8550 1900 0    50   ~ 0
+SDA
+Wire Wire Line
+	8850 1800 8550 1800
+Wire Wire Line
+	8850 1900 8550 1900
+Wire Wire Line
+	6000 3200 6800 3200
+Wire Wire Line
+	6800 3200 6800 3950
+Wire Wire Line
+	6000 3300 6550 3300
+Wire Wire Line
+	6550 3300 6550 4050
+Wire Wire Line
+	5700 4800 5700 4700
+Wire Wire Line
+	5700 4700 5750 4700
+$Comp
+L power:+5V #PWR?
+U 1 1 5D2A319A
+P 6450 4800
+F 0 "#PWR?" H 6450 4650 50  0001 C CNN
+F 1 "+5V" H 6465 4973 50  0000 C CNN
+F 2 "" H 6450 4800 50  0001 C CNN
+F 3 "" H 6450 4800 50  0001 C CNN
+	1    6450 4800
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
